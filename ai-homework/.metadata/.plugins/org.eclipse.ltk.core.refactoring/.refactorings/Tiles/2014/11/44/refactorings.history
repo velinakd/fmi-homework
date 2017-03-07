@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename method &apos;Node.neighbours()&apos; to &apos;neighbors&apos;&#x0A;- Original project: &apos;Tiles&apos;&#x0A;- Original element: &apos;Node.neighbours()&apos;&#x0A;- Renamed element: &apos;Node.neighbors()&apos;&#x0A;- Update references to refactored element" delegate="false" deprecate="false" description="Rename method &apos;neighbours&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.method" input="/src&lt;{Node.java[Node~neighbours" name="neighbors" references="true" stamp="1414970978015" version="1.0"/>
+</session>

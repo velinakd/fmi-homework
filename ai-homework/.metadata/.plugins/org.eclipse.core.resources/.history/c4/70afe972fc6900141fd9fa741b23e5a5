@@ -1,0 +1,32 @@
+package bg.unisofia.fmi.ai.nqueens;
+
+import java.lang.Math;
+
+public class NQueens {
+	private int n;
+	private final double MAX_ITER = Math.sqrt(n);
+	private int[] queens = new int[n];
+	
+	public NQueens(int n) {
+		this.n = n;
+	}
+	
+	public void initializePositions() {
+		for(int i=0; i<n; i++) {
+			queens[i] = (int)(Math.random() * n) + 1;
+		}
+	}
+	
+	public void findSolution() {
+		int i,j,k=0;
+		while(k <= MAX_ITER) {
+			i = (int)(Math.random() * n);
+			
+		}
+	}
+	
+	public static void main(String[] args) {
+		NQueens nq = new NQueens(8);
+		nq.findSolution();
+	}
+}

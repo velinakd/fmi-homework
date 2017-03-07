@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename compilation unit &apos;froggy.FrogLeak.java&apos; to &apos;FrogLeap.java&apos;&#x0A;- Original project: &apos;froggy&apos;&#x0A;- Original element: &apos;froggy.FrogLeak.java&apos;&#x0A;- Renamed element: &apos;froggy.FrogLeap.java&apos;" description="Rename compilation unit &apos;FrogLeak.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src&lt;froggy{FrogLeak.java" name="FrogLeap.java" references="false" stamp="1413745168882" version="1.0"/>
+</session>

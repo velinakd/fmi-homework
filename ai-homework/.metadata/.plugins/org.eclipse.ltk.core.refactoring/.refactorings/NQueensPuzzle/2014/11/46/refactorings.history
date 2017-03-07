@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename local variable &apos;i&apos; in &apos;bg.unisofia.fmi.ai.nqueens.NQueens.minConflicts(...)&apos; to &apos;j&apos;&#x0A;- Original project: &apos;NQueensPuzzle&apos;&#x0A;- Original element: &apos;bg.unisofia.fmi.ai.nqueens.NQueens.minConflicts(int).i&apos;&#x0A;- Renamed element: &apos;i&apos;&#x0A;- Update references to refactored element" description="Rename local variable &apos;i&apos;" id="org.eclipse.jdt.ui.rename.local.variable" input="/src&lt;bg.unisofia.fmi.ai.nqueens{NQueens.java[NQueens~minConflicts~I@i!902!908!906!906!I!0!false" name="j" references="true" stamp="1415751443243" version="1.0"/>
+</session>

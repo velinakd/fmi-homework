@@ -1,0 +1,84 @@
+import java.util.Scanner;
+
+public class TicTacToe {
+
+	private static int max(int A, int B, Node state) {
+		if (state.isFinal()) {
+			return state.evaluate(); // who wins and with how many empty slots
+			// e.g. first wins, 3 empty = 4; second wins, 4 empty = -1+ -4=-5
+		}
+		for (int i = 0; i < 9; i++) {
+			if (state.isValid(i)) {
+				state.doMove(i, 1);
+				int x = min(A, B, state);
+				if (A < x) {
+					A = x;
+				}
+				if (A >= B) {
+					return A;
+				}
+				state.revertMove(i);
+			}
+		}
+		return A; // TODO
+	}
+
+	private static int min(int A, int B, Node state) {
+		if (state.isFinal()) {
+			return state.evaluate();
+		}
+		for (int i = 0; i < 9; i++) {
+			if (state.isValid(i)) {
+				state.doMove(i, 2);
+				int x = max(A, B, state);
+				if (B > x) {
+					B = x;
+				}
+				if (A >= B) {
+					return B;
+				}
+				state.revertMove(i);
+			}
+		}
+		return B; // TODO
+	}
+
+	public int minimax(Node state) {
+		max(10, -10, state);
+
+	}
+
+	public static int fauxPlay(Node state) {
+		int currentMax = -20;
+		int current = -20;
+		int bestMove = 0;
+		for (int i = 0; i < 9; i++) {
+			if (state.isValid(i)) {
+				state.doMove(i, 1);
+				current = max(10, -10, state);
+				if (currentMax < current) {
+					currentMax = current;
+					bestMove = i;
+				}
+			}
+		}
+		return bestMove;
+	}
+
+	public static void main(String[] args) {
+		Node state = new Node();
+		Scanner in = new Scanner(System.in);
+		state.print();
+		while (!state.isFinal()) {
+			int move = in.nextInt();
+			state.doMove(move, 2);
+			state.print();
+			System.out.println("");
+			move = fauxPlay(state);
+			state.doMove(move, 1);
+			state.print();
+			System.out.println("");
+		}
+	}
+
+}

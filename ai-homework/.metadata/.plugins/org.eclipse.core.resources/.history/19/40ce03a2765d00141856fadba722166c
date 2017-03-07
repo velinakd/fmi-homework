@@ -1,0 +1,46 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+
+public class Node {
+	public int path;
+	public int board[][];
+	public ArrayList<Pair> coords;
+	public static final int finalBoard[][] = {
+		{1,2,3},
+		{4,0,5},
+		{6,7,8}
+	};
+	public static final List<Pair> finalCoords = Arrays.asList(new Pair(1,1), 
+			new Pair(0,0), new Pair(0,1), new Pair(0,2), new Pair(1,0), 
+			new Pair(2,0), new Pair(2,1), new Pair(2,2));
+	
+	public Node(int path, int board[][]) {
+		board = new int[3][3];
+		for (int i = 0; i < 3; i++) {
+			for (int j = 0; j < 3; j++) {
+				this.board[i][j] = board[i][j];
+				coords.add(this.board[i][j], new Pair(i,j));
+			}
+		}
+	}
+
+	
+	public int heuristic() {
+		int sum = 0;
+		for (int i = 0; i < 3; i++) {
+			for (int j = 0; j < 3; j++) {
+				
+			}
+		}
+		return sum;
+	}
+	
+	public static void main(String[] args) {
+		int[][] b = {{1,2,3},{4,5,6},{7,8,0}};
+		System.out.println(b[2][1]);
+		Node node = new Node(1, b);
+		System.out.println(Node.finalCoords.get(1));
+	}
+}

@@ -1,0 +1,44 @@
+public class TicTacToe {
+
+	private int max(int A, int B, Node state) {
+		if (state.isFinal()) {
+			return state.evaluate(); // who wins and with how many empty slots
+			// e.g. first wins, 3 empty = 4; second wins, 4 empty = -1+ -4=-5
+		}
+		for (int i = 0; i < 9; i++) {
+			if (state.isValid(i)) {
+				state.doMove(i, 1);
+				int x = min(A, B, state);
+				if (A < x) {
+					A = x;
+				}
+				if (A >= B) {
+					return A;
+				}
+				state.revertMove(i);
+			}
+		}
+	}
+
+	private int min(int A, int B, Node state) {
+		if(isFinal) {
+			return evaluate();
+		}
+		for all moves
+			do move
+		x=max(A,B,state)
+		if(B>x) {
+			B=x;
+		}
+		if(A>=B) {
+			return B;
+		}
+		revert move
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

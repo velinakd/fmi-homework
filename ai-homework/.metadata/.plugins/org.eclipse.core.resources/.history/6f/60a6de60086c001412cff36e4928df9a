@@ -1,0 +1,91 @@
+package bg.unisofia.fmi.ai.nqueens;
+
+import java.lang.Math;
+import java.util.Arrays;
+
+public class NQueens {
+	private int n;
+	private double MAX_ITER;
+	private int[] queens;
+
+	public NQueens(int n) {
+		this.n = n;
+		queens = new int[n];
+		MAX_ITER = n*n;
+	}
+
+	private void initializePositions() {
+		for (int i = 0; i < n; i++) {
+			queens[i] = (int) (Math.random() * (n - 1)) + 1;
+		}
+	}
+
+	private boolean inConflict(int x, int y) {
+		if (x == y)
+			return false;
+		if (queens[x] == queens[y] || (x - queens[x]) == (y - queens[y])
+				|| (x + queens[x]) == (y + queens[y]))
+			return true;
+		return false;
+	}
+
+	private int numberOfConflicts(int x) {
+		int number = 0;
+		for (int i = 0; i < n; i++) {
+			if (inConflict(x, i))
+				number++;
+		}
+		return number;
+	}
+
+	private void minConflicts(int x) {
+		int minCount = 0;
+		int rowWithMinCount = 0;
+		int currentCount = 0;
+
+		for (int j = 0; j < n; j++) {
+			queens[x] = j;
+			currentCount = numberOfConflicts(x);
+			if (minCount > currentCount) {
+				minCount = currentCount;
+				rowWithMinCount = j;
+			}
+		}
+		queens[x] = rowWithMinCount;
+	}
+
+	private boolean isSolution() {
+		for (int i = 0; i < n; i++) {
+			if (numberOfConflicts(i) != 0)
+				return false;
+		}
+		return true;
+	}
+
+	public void findSolution() {
+		int i = 0;
+		while (true) {
+			int k = 0;
+			initializePositions();
+			System.err.println("Init");
+			while (k <= MAX_ITER) {
+				i = (int) (Math.random() * (n - 1));
+				System.out.println(k + "MIN_START");
+				minConflicts(i);
+				System.out.println(k + "MIN_END");
+				if (isSolution()) {
+					System.out.println(Arrays.toString(queens));
+					return;
+				}
+				System.out.println("FINAL CHECK");
+				k++;
+			}
+			System.out.println();
+		}
+	}
+
+	public static void main(String[] args) {
+		NQueens nq = new NQueens(10);
+		nq.findSolution();
+	}
+}

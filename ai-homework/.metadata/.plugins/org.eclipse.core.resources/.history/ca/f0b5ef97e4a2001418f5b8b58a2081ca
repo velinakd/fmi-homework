@@ -1,0 +1,140 @@
+package bg.unisofia.fmi.ai.nqueens;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Random;
+
+public class NQueens {
+	private Random rand = new Random(13331);
+	private int n;
+	private double MAX_ITER;
+	private int[] queens;
+
+	int[] columns;
+	int[] firstDiagonal;
+	int[] secondDiagonal;
+
+	public NQueens(int n) {
+		this.n = n;
+		queens = new int[n];
+		MAX_ITER = n * n;
+		columns = new int[n];
+		secondDiagonal = new int[2 * n];
+		firstDiagonal = new int[2 * n];
+	}
+
+	private void initializePositions() {
+		for (int i = 0; i < n; i++) {
+			queens[i] = rand.nextInt(n);
+		}
+//		System.out.println("Init");
+	}
+
+	private boolean inConflict(int x, int y) {
+		if (x == y)
+			return false;
+		if (queens[x] == queens[y] || (x - queens[x]) == (y - queens[y])
+				|| (x + queens[x]) == (y + queens[y]))
+			return true;
+		return false;
+	}
+
+	private int numberOfConflicts(int x) {
+		int number = 0;
+		for (int i = 0; i < n; i++) {
+			if (inConflict(x, i))
+				number++;
+		}
+		return number;
+	}
+
+	private void minConflicts(int x) {
+		Arrays.fill(columns, 0);
+		Arrays.fill(secondDiagonal, 0);
+		Arrays.fill(firstDiagonal, 0);
+		for (int i = 0; i < n; ++i) {
+			if (i != x) {
+				++columns[queens[i]];
+				++secondDiagonal[i + queens[i]];
+				++firstDiagonal[queens[i] - i + n];
+			}
+		}
+		int minCount = (int) 1E9;
+		int currentCount = 0;
+
+		ArrayList<Integer> arr = new ArrayList<>();
+
+		for (int j = 0; j < n; j++) {
+			queens[x] = j;
+			currentCount = columns[queens[x]];
+			currentCount += secondDiagonal[x + queens[x]];
+			currentCount += firstDiagonal[queens[x] - x + n];
+			if (minCount > currentCount) {
+				arr.clear();
+				minCount = currentCount;
+			}
+			if (minCount == currentCount) {
+				arr.add(j);
+			}
+		}
+		queens[x] = arr.get(rand.nextInt(arr.size()));
+	}
+
+	private boolean isSolution() {
+		Arrays.fill(columns, 0);
+		Arrays.fill(secondDiagonal, 0);
+		Arrays.fill(firstDiagonal, 0);
+		for (int i = 0; i < n; ++i) {
+			if (++columns[queens[i]] > 1)
+				return false;
+			if (++secondDiagonal[i + queens[i]] > 1)
+				return false;
+			if (++firstDiagonal[queens[i] - i + n] > 1)
+				return false;
+		}
+		return true;
+	}
+
+	private void print() {
+		for (int i = 0; i < n; i++) {
+			for (int j = 0; j < n; j++) {
+				if (queens[i] == j) {
+					System.out.print("* ");
+				} else {
+					System.out.print("- ");
+				}
+			}
+			System.out.println("");
+		}
+	}
+
+	public void findSolution() {
+		while (true) {
+			int k = 0;
+			initializePositions();
+			int i = -1;
+			int last = -1;
+			while (k <= MAX_ITER) {
+				while (i == last || (numberOfConflicts(i) == 0)) {
+					i = rand.nextInt(n);
+				}
+
+				last = i;
+				minConflicts(i);
+				if (isSolution()) {
+//					print();
+					return;
+				}
+				k++;
+			}
+		}
+	}
+
+	public static void main(String[] args) {
+		double beg = System.currentTimeMillis();
+		NQueens nq = new NQueens(1000);
+		nq.findSolution();
+		double end = System.currentTimeMillis();
+		System.out.printf("%.3f\n", (end - beg) / 1000);
+	}
+}

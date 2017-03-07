@@ -1,0 +1,108 @@
+/*RESETS*/
+*, html, body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, label, fieldset, input, p, blockquote, th, td{margin:0; padding:0}
+table{border-collapse:collapse; border-spacing:0}
+fieldset, img{border:0}
+address, caption, cite, code, dfn, em, strong, th, var{font-style:normal; font-weight:normal}
+ol, ul, li{list-style:none}
+caption, th{text-align:left}
+h1, h2, h3, h4, h5, h6{font-size:100%; font-weight:bold}
+strong{font-weight:bold}
+a img{border:none}
+.clearfix{clear: both;}
+
+main
+{
+    width: 960px;
+    margin: 0 auto;
+}
+
+body
+{
+    font-family: sans-serif;
+}
+
+.logo
+{
+    color: black;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 35px;
+    font-weight: bold;
+    margin-top: 35px;
+    margin-bottom: 35px;
+    display: inline-block;
+}
+
+nav 
+{
+    display: inline-block;
+    float:right;
+    margin-top: 55px;
+}
+
+.links {
+    color: black;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-right: 15px;
+    text-decoration: none;
+    }
+
+h1
+{
+    text-transform: uppercase;
+    border-bottom: solid #b0b0b0 3px;
+    margin-bottom: 25px;
+    padding-bottom: 5px;
+
+}
+
+.articles
+{
+    float:left;
+    width: 303px;
+    margin-right: 25px;
+}
+
+.articles#last
+{
+    margin-right: 0px;
+}
+
+h2 a
+{
+    width:303px;
+    height: 30px;
+    text-decoration: none;
+    font-size: 0.9em;
+    font-style: bold;
+    color: #7cf;
+    background-color: black;
+    opacity:0.8;
+    padding-top: 8px;
+    position: absolute;
+    top: 358px;
+}
+
+p.text
+{
+    width: 303px;
+    font-size: 0.9em;
+}
+
+time
+{
+    display: block;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    font-size: 0.95em;
+    color: #b0b0b0;
+}
+
+img
+{
+    display: block;
+    width: 303px;
+    height: 231px;
+}

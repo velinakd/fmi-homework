@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="OverviewSectionTreeExpansionState1125">
+		<item value="false" key="Memory"/>
+		<item value="false" key="Garbage collector"/>
+		<item value="false" key="Runtime"/>
+		<item value="false" key="Operating system"/>
+		<item value="false" key="Class loading"/>
+		<item value="false" key="Compilation"/>
+		<item value="false" key="Thread"/>
+	</section>
+	<section name="OverviewSectionTreeExpansionState16796">
+		<item value="false" key="Memory"/>
+		<item value="false" key="Garbage collector"/>
+		<item value="true" key="Runtime"/>
+		<item value="false" key="Class loading"/>
+		<item value="false" key="Operating system"/>
+		<item value="false" key="System properties"/>
+		<item value="false" key="Thread"/>
+		<item value="false" key="Compilation"/>
+	</section>
+	<section name="org.jvmmonitor.internal.ui.properties.cpu.CpuSection">
+		<item value="bg.unisofia.fmi.ai.nqueens" key="org.jvmmonitor.ui.packages"/>
+		<item value="BCI" key="org.jvmmonitor.ui.profilerType"/>
+		<item value="50" key="org.jvmmonitor.ui.profilerSampingPeriod"/>
+	</section>
+	<section name="ToggleOrientationAction">
+	</section>
+</section>

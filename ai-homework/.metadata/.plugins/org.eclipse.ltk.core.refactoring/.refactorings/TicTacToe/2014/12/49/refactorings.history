@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename method &apos;Node.doMove(...)&apos; to &apos;makeMove&apos;&#x0A;- Original project: &apos;TicTacToe&apos;&#x0A;- Original element: &apos;Node.doMove(...)&apos;&#x0A;- Renamed element: &apos;Node.makeMove(...)&apos;&#x0A;- Update references to refactored element" delegate="false" deprecate="false" description="Rename method &apos;doMove&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.method" input="/src&lt;{Node.java[Node~doMove~I~I" name="makeMove" references="true" stamp="1417394138176" version="1.0"/>
+</session>

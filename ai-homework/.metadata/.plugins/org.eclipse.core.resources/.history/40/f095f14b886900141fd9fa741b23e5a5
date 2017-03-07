@@ -1,0 +1,29 @@
+package bg.unisofia.fmi.ai.nqueens;
+
+import java.lang.Math;
+
+public class NQueens {
+	private int n;
+	private final double MAX_ITER = Math.sqrt(n);
+	
+	public NQueens(int n) {
+		this.n = n;
+	}
+	
+	public int[][] initializeBoard() {
+		int[][] board = new int[n][n];
+		
+		return board;
+	}
+	
+	public void placeQueens() {
+		int i = 1;
+		while(i<=MAX_ITER) {
+			
+		}
+	}
+	
+	public static void main(String[] args) {
+		
+	}
+}

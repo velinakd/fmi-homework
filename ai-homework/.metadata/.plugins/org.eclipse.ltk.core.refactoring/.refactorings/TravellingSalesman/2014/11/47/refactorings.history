@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename local variable &apos;newPopulation&apos; in &apos;bg.unisofia.fmi.salesman.TravellingSalesman.evolvePopulation(...)&apos; to &apos;nextGeneration&apos;&#x0A;- Original project: &apos;TravellingSalesman&apos;&#x0A;- Original element: &apos;bg.unisofia.fmi.salesman.TravellingSalesman.evolvePopulation(Population).newPopulation&apos;&#x0A;- Renamed element: &apos;newPopulation&apos;&#x0A;- Update references to refactored element" description="Rename local variable &apos;newPopulation&apos;" id="org.eclipse.jdt.ui.rename.local.variable" input="/src&lt;bg.unisofia.fmi.salesman{TravellingSalesman.java[TravellingSalesman~evolvePopulation~QPopulation;@newPopulation!2100!2173!2111!2123!QPopulation;!0!false" name="nextGeneration" references="true" stamp="1416209936818" version="1.0"/>
+</session>
